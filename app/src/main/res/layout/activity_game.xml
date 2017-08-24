@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:layout_below="@+id/dialog_pedra_papel_tesoura"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/cabecalho_game"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="35sp"/>
+
+        <android.support.constraint.ConstraintLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:padding="5dp"
+            android:layout_below="@+id/cabecalho_game">
+
+            <!--Divisores do ConstraintLayout-->
+            <android.support.constraint.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vertical_division_0"
+                app:layout_constraintGuide_percent="0"
+                android:orientation="vertical" />
+
+            <android.support.constraint.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vertical_division_1"
+                app:layout_constraintGuide_percent="0.33"
+                android:orientation="vertical" />
+
+            <android.support.constraint.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vertical_division_2"
+                app:layout_constraintGuide_percent="0.66"
+                android:orientation="vertical" />
+
+            <android.support.constraint.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vertical_division_3"
+                app:layout_constraintGuide_percent="1"
+                android:orientation="vertical" />
+
+            <android.support.constraint.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/horizontal_division_0"
+                app:layout_constraintGuide_percent="0"
+                android:orientation="horizontal" />
+
+            <android.support.constraint.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/horizontal_division_1"
+                app:layout_constraintGuide_percent="0.33"
+                android:orientation="horizontal"/>
+
+            <android.support.constraint.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/horizontal_division_2"
+                app:layout_constraintGuide_percent="0.66"
+                android:orientation="horizontal"/>
+
+            <android.support.constraint.Guideline
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/horizontal_division_3"
+                app:layout_constraintGuide_percent="1"
+                android:orientation="horizontal"/>
+
+            <!--Conteúdo das células do ConstraintLayout (1º linha)-->
+
+            <RelativeLayout
+                android:id="@+id/marca_super_diret"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@+id/horizontal_division_0"
+                app:layout_constraintLeft_toLeftOf="@+id/vertical_division_2"
+                app:layout_constraintRight_toRightOf="@+id/vertical_division_3"
+                app:layout_constraintBottom_toBottomOf="@+id/horizontal_division_1"
+                android:background="@drawable/bkg_campo_sup_dir"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/img_super_diret"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/marca_super_centro"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@+id/horizontal_division_0"
+                app:layout_constraintLeft_toLeftOf="@+id/vertical_division_1"
+                app:layout_constraintRight_toRightOf="@+id/vertical_division_2"
+                app:layout_constraintBottom_toBottomOf="@+id/horizontal_division_1"
+                android:background="@drawable/bkg_campo_sup_cent"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/img_super_centro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/marca_super_esqr"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@+id/horizontal_division_0"
+                app:layout_constraintLeft_toLeftOf="@+id/vertical_division_0"
+                app:layout_constraintRight_toRightOf="@+id/vertical_division_1"
+                app:layout_constraintBottom_toBottomOf="@+id/horizontal_division_1"
+                android:background="@drawable/bkg_campo_sup_esqr"
+                android:padding="10dp">
+            <ImageView
+                android:id="@+id/img_super_esqr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+            </RelativeLayout>
+
+            <!--Conteúdo das células do ConstraintLayout (2º linha)-->
+            <RelativeLayout
+                android:id="@+id/marca_centro_esqr"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@+id/horizontal_division_1"
+                app:layout_constraintLeft_toLeftOf="@+id/vertical_division_0"
+                app:layout_constraintRight_toRightOf="@+id/vertical_division_1"
+                app:layout_constraintBottom_toBottomOf="@+id/horizontal_division_2"
+                android:background="@drawable/bkg_campo_cent_esqr"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/img_centro_esqr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/marca_centro_centro"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@+id/horizontal_division_1"
+                app:layout_constraintLeft_toLeftOf="@+id/vertical_division_1"
+                app:layout_constraintRight_toRightOf="@+id/vertical_division_2"
+                app:layout_constraintBottom_toBottomOf="@+id/horizontal_division_2"
+                android:background="@drawable/bkg_campo_cent_cent"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/img_centro_centro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/marca_centro_diret"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@+id/horizontal_division_1"
+                app:layout_constraintLeft_toLeftOf="@+id/vertical_division_2"
+                app:layout_constraintRight_toRightOf="@+id/vertical_division_3"
+                app:layout_constraintBottom_toBottomOf="@+id/horizontal_division_2"
+                android:background="@drawable/bkg_campo_cent_dir"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/img_centro_diret"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <!--Conteúdo das células do ConstraintLayout (3º linha)-->
+            <RelativeLayout
+                android:id="@+id/marca_infer_esqr"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@+id/horizontal_division_2"
+                app:layout_constraintLeft_toLeftOf="@+id/vertical_division_0"
+                app:layout_constraintRight_toRightOf="@+id/vertical_division_1"
+                app:layout_constraintBottom_toBottomOf="@+id/horizontal_division_3"
+                android:background="@drawable/bkg_campo_inf_esqr"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/img_infer_esqr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/marca_infer_centro"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@+id/horizontal_division_2"
+                app:layout_constraintLeft_toLeftOf="@+id/vertical_division_1"
+                app:layout_constraintRight_toRightOf="@+id/vertical_division_2"
+                app:layout_constraintBottom_toBottomOf="@+id/horizontal_division_3"
+                android:background="@drawable/bkg_campo_inf_cent"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/img_infer_centro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/marca_infer_diret"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="@+id/horizontal_division_2"
+                app:layout_constraintLeft_toLeftOf="@+id/vertical_division_2"
+                app:layout_constraintRight_toRightOf="@+id/vertical_division_3"
+                app:layout_constraintBottom_toBottomOf="@+id/horizontal_division_3"
+                android:background="@drawable/bkg_campo_inf_dir"
+                android:padding="10dp">
+                <ImageView
+                    android:id="@+id/img_infer_diret"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="sair"
+                android:text="Sair"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_pedra_papel_tesoura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@android:color/white"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Escolha sua opção"
+            android:layout_gravity="center_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="3">
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/hand_paper"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/hand_rock"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/hand_scissor"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

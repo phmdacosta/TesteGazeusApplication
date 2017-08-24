@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Teste Gazeus Application</string>
+    <string name="titulo_game">Jogo da Velha</string>
+</resources>
